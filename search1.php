@@ -16,8 +16,65 @@
 </style>
 </head>
 <body>
+<h1>Register here!</h1>
+<p>Fill in the name, company name or email address fields, then click <strong>Submit</strong> to search.</p>
+<form method="post" action="index.php" enctype="multipart/form-data" >
+      Name  <input type="text" name="name" id="name"/></br>
+      Company <input type="text" name="company_name" id="company_name"/></br>
+      Email <input type="text" name="email" id="email"/></br>
+      <input type="submit" name="submit" value="Submit" />
+</form>
+<?php
+    // DB connection info
+    //TODO: Update the values for $host, $user, $pwd, and $db
+    //using the values you retrieved earlier from the portal.
+    $host = "eu-cdbr-azure-west-b.cloudapp.net";
+    $user = "b8317ee51ef916";
+    $pwd = "46dce236";
+    $db = "waedwardDB";
+    // Connect to database.
+    try {
+        $conn = new PDO( "mysql:host=$host;dbname=$db", $user, $pwd);
+        $conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
+    }
+    catch(Exception $e){
+        die(var_dump($e));
+    }
+    // Search registration info
+    if(!empty($_POST)) {
+    try {
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $compay_name = $_POST['company_name'];
+        // Retreive data
+        $sql_select = "SELECT * FROM registration_tbl WHERE (name LIKE ?, email LIKE ? company_name LIKE ?) ";
+               $stmt->bindValue(1, '%'.$name.'%');
+               $stmt->bindValue(3, '%'.$company_name.'%');
+        $stmt->bindValue(2, '%'.$email.'%');
+        $stmt->execute();
 
-<h1> HI </h1>
+        $stmt = $conn->query($sql_select);
+        $registrants = $stmt->fetchAll();
 
+            if(count($registrants) > 0) {
+                echo "<h2>People who are registered:</h2>";
+                echo "<table>";
+                echo "<tr><th>Name</th>";
+                echo "<th>Company</th>";
+                echo "<th>Email</th>";
+                echo "<th>Date</th></tr>";
+                foreach($registrants as $registrant) {
+                    echo "<tr><td>".$registrant['name']."</td>";
+                    echo "<td>".$registrant['email']."</td>";
+                    echo "<td>".$registrant['company_name']."</td>";
+                    echo "<td>".$registrant['date']."</td></tr>";
+                }
+                echo "</table>";
+            } else {
+                echo "<h3>No one is currently registered.</h3>";
+            }
+    }
+
+?>
 </body>
 </html>
