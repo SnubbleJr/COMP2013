@@ -47,14 +47,14 @@
         $email = $_POST['email'];
 	$compay_name = $_POST['company_name'];
         // Retreive data
-        $sql_select = "SELECT * FROM registration_tbl WHERE (name LIKE ?, email LIKE ? company_name LIKE ?) ";
+        $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE ?, email LIKE ? company_name LIKE ?";
+        $stmt = $conn->query($sql_select);
        	$stmt->bindValue(1, '%'.$name.'%');
        	$stmt->bindValue(3, '%'.$company_name.'%');
         $stmt->bindValue(2, '%'.$email.'%');
         $stmt->execute();
 
-        $stmt = $conn->query($sql_select);
-/*        $registrants = $stmt->fetchAll();
+        $registrants = $stmt->fetchAll();
 
 	    if(count($registrants) > 0) {
 	        echo "<h2>People who are registered:</h2>";
@@ -72,7 +72,7 @@
 	        echo "</table>";
 	    } else {
 	        echo "<h3>No one is currently registered.</h3>";
-	    }*/
+	    }
     }
 
 ?>
