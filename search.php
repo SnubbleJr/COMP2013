@@ -54,6 +54,10 @@
         $stmt->bindValue(3, '%'.$email.'%');
         $stmt->execute();
     }
+    catch(Exception $e) {
+        die(var_dump($e));
+    }
+}
         /*$registrants = $stmt->fetchAll();
 
 	    if(count($registrants) > 0) {
@@ -65,15 +69,14 @@
 	        echo "<th>Date</th></tr>";
 	        foreach($registrants as $registrant) {
 	            echo "<tr><td>".$registrant['name']."</td>";
-	            echo "<td>".$registrant['email']."</td>";
 	            echo "<td>".$registrant['company_name']."</td>";
+	            echo "<td>".$registrant['email']."</td>";
 	            echo "<td>".$registrant['date']."</td></tr>";
 	        }
 	        echo "</table>";
 	    } else {
 	        echo "<h3>No one is currently registered.</h3>";
 	    }*/
-    }
 
 ?>
 </body>
