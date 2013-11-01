@@ -48,14 +48,15 @@
         $email = $_POST['email'];
         // Retreive data
         $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE ? AND company_name LIKE ? AND email LIKE ?";
-        $stmt = $conn->prepare($sql_select);
+
        	$stmt->bindValue(1, '%'.$name.'%');
        	$stmt->bindValue(2, '%'.$company_name.'%');
         $stmt->bindValue(3, '%'.$email.'%');
 
+        $stmt = $conn->prepare($sql_select);
         $registrants = $stmt->execute();
 
-	    if(count($registrants) > 0) {
+	    if(count($registrants) > 0) {	
 	        echo "<h2>Search results:</h2>";
 	        echo "<table>";
 	        echo "<tr><th>Name</th>";
