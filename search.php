@@ -42,7 +42,7 @@
     }
     // Search registration info
     if(!empty($_POST)) {
-    try {
+    /*try {
         $name = $_POST['name'];
         $email = $_POST['email'];
 	$compay_name = $_POST['company_name'];
@@ -73,7 +73,7 @@
 	    } else {
 	        echo "<h3>No one is currently registered.</h3>";
 	    }
-    }
+    }*/
 
 ?>
 </body>
