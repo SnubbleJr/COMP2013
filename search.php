@@ -41,8 +41,8 @@
         die(var_dump($e));
     }
     // Search registration info
-    if(!empty($_POST)) {
-    /*try {
+    /*if(!empty($_POST)) {
+    try {
         $name = $_POST['name'];
         $email = $_POST['email'];
 	$compay_name = $_POST['company_name'];
