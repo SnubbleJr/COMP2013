@@ -2,11 +2,11 @@
 <head>
 <Title>Registration Form</Title>
 <style type="text/css">
-    body { background-color: #fff; border-top: solid 10px #000;
+    body { background-color: #FFF; border-top: solid 10px #000;
         color: #333; font-size: .85em; margin: 20; padding: 20;
         font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     }
-    h1, h2, h3,{ color: #000; margin-bottom: 0; padding-bottom: 0; }
+    h1, h2, h3,{ color: #CCC; margin-bottom: 0; padding-bottom: 0; }
     h1 { font-size: 2em; }
     h2 { font-size: 1.75em; }
     h3 { font-size: 1.2em; }
@@ -20,7 +20,7 @@
 <body>
 <h1>Register here!</h1>
 <p>Fill in your name, company name and email address, then click <strong>Submit</strong> to register.</p>
-<h1><a href="search.php">search</a></h1>
+<h1><a href="search.php">Search</a></h1>
 <form method="post" action="index.php" enctype="multipart/form-data" >
       Name  <input type="text" name="name" id="name"/></br>
       Company <input type="text" name="company_name" id="company_name"/></br>
