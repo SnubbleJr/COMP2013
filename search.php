@@ -52,13 +52,8 @@
        	$stmt->bindValue(1, '%'.$name.'%');
        	$stmt->bindValue(2, '%'.$company_name.'%');
         $stmt->bindValue(3, '%'.$email.'%');
-        $stmt->execute();
-    }
-    catch(Exception $e) {
-        die(var_dump($e));
-    }
-}
-        /*$registrants = $stmt->fetchAll();
+
+        $registrants = $stmt->execute();
 
 	    if(count($registrants) > 0) {
 	        echo "<h2>People who are registered:</h2>";
@@ -75,8 +70,13 @@
 	        }
 	        echo "</table>";
 	    } else {
-	        echo "<h3>No one is currently registered.</h3>";
-	    }*/
+	        echo "<h3>No search results.</h3>";
+	    }        
+    }
+    catch(Exception $e) {
+        die(var_dump($e));
+    }
+}
 
 ?>
 </body>
