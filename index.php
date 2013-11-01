@@ -45,7 +45,7 @@
     if(!empty($_POST)) {
     try {
         $name = $_POST['name'];
-	$compay_name = $_POST['company_name'];
+	$company_name = $_POST['company_name'];
         $email = $_POST['email'];
         $date = date("Y-m-d");
         // Insert data
