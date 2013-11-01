@@ -47,7 +47,7 @@
 	$compay_name = $_POST['company_name'];
         $email = $_POST['email'];
         // Retreive data
-        $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE ?, email LIKE ? company_name LIKE ?";
+        $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE ?, company_name LIKE ?, email LIKE ?";
         $stmt = $conn->prepare($sql_select);
        	$stmt->bindValue(1, '%'.$name.'%');
        	$stmt->bindValue(2, '%'.$company_name.'%');
@@ -56,7 +56,7 @@
         $registrants = $stmt->execute();
 
 	    if(count($registrants) > 0) {
-	        echo "<h2>People who are registered:</h2>";
+	        echo "<h2>Search results:</h2>";
 	        echo "<table>";
 	        echo "<tr><th>Name</th>";
 	        echo "<th>Company</th>";
