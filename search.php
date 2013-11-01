@@ -18,7 +18,7 @@
 <body>
 <h1>Register here!</h1>
 <p>Fill in the name, company name or email address fields, then click <strong>Submit</strong> to register.</p>
-<form method="post" action="index.php" enctype="multipart/form-data" >
+<form method="post" action="search.php" enctype="multipart/form-data" >
       Name  <input type="text" name="name" id="name"/></br>
       Company <input type="text" name="company_name" id="company_name"/></br>
       Email <input type="text" name="email" id="email"/></br>
