@@ -44,8 +44,8 @@
     if(!empty($_POST)) {
     try {
         $name = $_POST['name'];
-        $email = $_POST['email'];
 	$compay_name = $_POST['company_name'];
+        $email = $_POST['email'];
         // Retreive data
         $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE ?, email LIKE ? company_name LIKE ?";
         $stmt = $conn->prepare($sql_select);

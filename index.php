@@ -45,8 +45,8 @@
     if(!empty($_POST)) {
     try {
         $name = $_POST['name'];
-        $email = $_POST['email'];
 	$compay_name = $_POST['company_name'];
+        $email = $_POST['email'];
         $date = date("Y-m-d");
         // Insert data
         $sql_insert = "INSERT INTO registration_tbl (name, company_name, email, date) 
