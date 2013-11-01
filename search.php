@@ -48,12 +48,12 @@
 	$compay_name = $_POST['company_name'];
         // Retreive data
         $sql_select = "SELECT * FROM registration_tbl WHERE name LIKE ?, email LIKE ? company_name LIKE ?";
-        $stmt = $conn->query($sql_select);
+        $stmt = $conn->prepare($sql_select);
        	$stmt->bindValue(1, '%'.$name.'%');
-       	$stmt->bindValue(3, '%'.$company_name.'%');
-        $stmt->bindValue(2, '%'.$email.'%');
+       	$stmt->bindValue(2, '%'.$company_name.'%');
+        $stmt->bindValue(3, '%'.$email.'%');
         $stmt->execute();
-	}
+    }
         /*$registrants = $stmt->fetchAll();
 
 	    if(count($registrants) > 0) {
