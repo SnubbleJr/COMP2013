@@ -53,8 +53,8 @@
        	$stmt->bindValue(3, '%'.$company_name.'%');
         $stmt->bindValue(2, '%'.$email.'%');
         $stmt->execute();
-
-        $registrants = $stmt->fetchAll();
+	}
+        /*$registrants = $stmt->fetchAll();
 
 	    if(count($registrants) > 0) {
 	        echo "<h2>People who are registered:</h2>";
@@ -72,7 +72,7 @@
 	        echo "</table>";
 	    } else {
 	        echo "<h3>No one is currently registered.</h3>";
-	    }
+	    }*/
     }
 
 ?>
