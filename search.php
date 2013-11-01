@@ -16,8 +16,8 @@
 </style>
 </head>
 <body>
-<h1>Register here!</h1>
-<p>Fill in the name, company name or email address fields, then click <strong>Submit</strong> to register.</p>
+<h1>Search here!</h1>
+<p>Fill in the name, company name or email address fields, then click <strong>Submit</strong> to search.</p>
 <form method="post" action="search.php" enctype="multipart/form-data" >
       Name  <input type="text" name="name" id="name"/></br>
       Company <input type="text" name="company_name" id="company_name"/></br>
@@ -41,7 +41,7 @@
         die(var_dump($e));
     }
     // Search registration info
-    /*if(!empty($_POST)) {
+    if(!empty($_POST)) {
     try {
         $name = $_POST['name'];
         $email = $_POST['email'];
@@ -54,7 +54,7 @@
         $stmt->execute();
 
         $stmt = $conn->query($sql_select);
-        $registrants = $stmt->fetchAll();
+/*        $registrants = $stmt->fetchAll();
 
 	    if(count($registrants) > 0) {
 	        echo "<h2>People who are registered:</h2>";
@@ -72,8 +72,8 @@
 	        echo "</table>";
 	    } else {
 	        echo "<h3>No one is currently registered.</h3>";
-	    }
-    }*/
+	    }*/
+    }
 
 ?>
 </body>
